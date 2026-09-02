@@ -14,13 +14,21 @@ import { SemanticBreakdown } from './components/SemanticBreakdown';
 import { CineGuardAudit } from './components/CineGuardAudit';
 import { SteganographyStudio } from './components/SteganographyStudio';
 import { PitchDeckShowcase } from './components/PitchDeckShowcase';
-import { CryptoArbitrageEngine } from './components/CryptoArbitrageEngine';
+import { ShortReelsStudio } from './components/ShortReelsStudio';
+import { TalentBountyMarketplace } from './components/TalentBountyMarketplace';
+import { CinematicPrevizSimulator } from './components/CinematicPrevizSimulator';
+import { CinemaTubeHub } from './components/CinemaTubeHub';
+import { GodfatherSanctum } from './components/GodfatherSanctum';
+import { AutonomousDirectorSuite } from './components/AutonomousDirectorSuite';
+import { BoxOfficeProphetSuite } from './components/BoxOfficeProphetSuite';
+import { VirtualProductionSuite } from './components/VirtualProductionSuite';
 import { ShaheenA1Hardware } from './components/ShaheenA1Hardware';
 import { SapProtocolDashboard } from './components/SapProtocolDashboard';
+import { EliteArsenalStore } from './components/EliteArsenalStore';
 import { CyberFalconLogo } from './components/CyberFalconLogo';
 import { CyberFalconIntro } from './components/CyberFalconIntro';
 import { FounderContractModal } from './components/FounderContractModal';
-import { CheckCircle2, AlertCircle, Award } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Award, Maximize, Minimize, ExternalLink, X, Monitor } from 'lucide-react';
 
 export default function App() {
   const [currentRoom, setCurrentRoom] = useState<AppRoom>('castle_gate');
@@ -28,11 +36,56 @@ export default function App() {
   const [isSpeaking, setIsSpeaking] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   
-  // 1.6-second Cyber Falcon Intro on startup
-  const [showIntro, setShowIntro] = useState<boolean>(true);
+  // Cyber Falcon Intro disabled on startup as requested
+  const [showIntro, setShowIntro] = useState<boolean>(false);
   
   // Sovereign Founder Deed / Patent Charter Modal
   const [isContractOpen, setIsContractOpen] = useState<boolean>(false);
+
+  // Fullscreen state & initial prompt banner
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  const [showFullscreenPrompt, setShowFullscreenPrompt] = useState<boolean>(true);
+
+  // Listen to native fullscreen changes
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
+  const handleToggleFullscreen = async () => {
+    try {
+      if (!document.fullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+          await document.documentElement.requestFullscreen();
+        } else if ((document.documentElement as any).webkitRequestFullscreen) {
+          await (document.documentElement as any).webkitRequestFullscreen();
+        }
+        setIsFullscreen(true);
+        setShowFullscreenPrompt(false);
+        showToast(lang === 'ar' ? 'تم تفعيل وضع ملء الشاشة' : 'Fullscreen mode enabled');
+      } else {
+        if (document.exitFullscreen) {
+          await document.exitFullscreen();
+        } else if ((document as any).webkitExitFullscreen) {
+          await (document as any).webkitExitFullscreen();
+        }
+        setIsFullscreen(false);
+        showToast(lang === 'ar' ? 'تم إنهاء وضع ملء الشاشة' : 'Exited fullscreen mode');
+      }
+    } catch (err) {
+      console.warn('Fullscreen request failed (likely iframe sandbox policy):', err);
+      // Fallback: If inside an iframe where requestFullscreen might be restricted, give clear guidance
+      showToast(lang === 'ar' ? 'يمكنك أيضاً فتح الرابط في نافذة جديدة لعرض شاشة كاملة حقيقي' : 'Open in new tab for native full window');
+    }
+  };
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -53,10 +106,18 @@ export default function App() {
     }
 
     let textToSpeak = '';
-    if (currentRoom === 'castle_gate') {
+    if (currentRoom === 'cinema_tube') {
+      textToSpeak = lang === 'ar'
+        ? 'منصة شاهين سينما تيوب، يوتيوب السينما المفتوح، رفع مجاني للمواهب والكتّاب المغمورين ودخول مجاني للمنتجين لتحقيق فرص ربح حقيقية.'
+        : 'Shaheen CinemaTube, open free video stage for obscure writers, actors and directors to secure real studio deals and grants.';
+    } else if (currentRoom === 'castle_gate') {
       textToSpeak = lang === 'ar'
         ? 'أهلاً بكم في بوابة كاسل غيت لمنظومة شاهين إيبكس، نظام الحماية السيادي لسيناريوهات هوليوود.'
         : 'Welcome to Castle Gate SHAHEEN APEX AI, sovereign cinema script protection protocol.';
+    } else if (currentRoom === 'autonomous_director') {
+      textToSpeak = lang === 'ar'
+        ? 'منظومة إدارة الإخراج الذاتي وهندسة الميزانية، تفاوض حي بين المخرج والسيناريست والمدقق المالي لتفصيل فيلم أسطوري بمقاس ميزانيتك.'
+        : 'Autonomous Director Suite, real-time negotiation between AI Director, Screenwriter, and Loss Comptroller to tailor a cinema production to your exact budget.';
     } else if (currentRoom === 'forensic_editor') {
       textToSpeak = lang === 'ar'
         ? 'مساعد السيناريو والبحث الجنائي ومطابقة النصوص لكشف السرقات وحماية الملكية الفكرية.'
@@ -77,14 +138,11 @@ export default function App() {
       textToSpeak = lang === 'ar'
         ? 'فحص سين جارد، تحليل شباك التذاكر، والتنبؤ باحتفاظ الجمهور باستخدام الذكاء الاصطناعي.'
         : 'CineGuard Audit, Box Office Analytics, and Audience Retention Forecasting using AI.';
+    } else if (currentRoom === 'short_reels') {
+      textToSpeak = lang === 'ar'
+        ? 'شاهين ريلز وتيك توك السينمائي، منصة فيديوهات رأسية سريعة بحد أقصى دقيقتين لعرض مسودات السيناريو وتجارب الأداء ورؤية المخرجين.'
+        : 'Shaheen Short Reels, TikTok-style vertical cinema video feed up to 2 minutes for screenplay pitches and auditions.';
     } else if (currentRoom === 'pitch_deck') {
-      textToSpeak = lang === 'ar'
-        ? 'ملف العرض التقديمي الرسمي لمنظومة شاهين إيبكس وقصة المؤسس المهندس أيمن العرايشي العرّاب.'
-        : 'Official Pitch Deck of SHAHEEN APEX AI and founder story of Eng. Ayman Al-Araishi (The Godfather).';
-    } else if (currentRoom === 'crypto_arbitrage') {
-      textToSpeak = lang === 'ar'
-        ? 'منظومة شاهين كريبتو، محرك الأرباح الجنائية وهيكل الأمان المزدوج مع خوارزميات التداول التفاعلي.'
-        : 'Shaheen Crypto Engine, Dual-Layer Security and Wealth Generation Algorithm for sovereign trading.';
     } else if (currentRoom === 'sap_protocol') {
       textToSpeak = lang === 'ar'
         ? 'بروتوكول شاهين للأمن السيبراني، حماية صامتة تعتمد على المستشعرات الحيوية وخوارزميات التتبع الديناميكي.'
@@ -121,7 +179,10 @@ export default function App() {
       {showIntro && (
         <CyberFalconIntro
           lang={lang}
-          onComplete={() => setShowIntro(false)}
+          onComplete={() => {
+            setShowIntro(false);
+            setCurrentRoom('cinematic_previz');
+          }}
         />
       )}
 
@@ -146,7 +207,40 @@ export default function App() {
         isSpeaking={isSpeaking}
         onOpenContract={() => setIsContractOpen(true)}
         onReplayIntro={() => setShowIntro(true)}
+        isFullscreen={isFullscreen}
+        onToggleFullscreen={handleToggleFullscreen}
       />
+
+      {/* Fullscreen Prompt Floating Quick-Banner (خيار العرض بملء الشاشة عند فتح الرابط) */}
+      {showFullscreenPrompt && !isFullscreen && (
+        <div className="bg-gradient-to-r from-cyan-950/90 via-slate-900/95 to-cyan-950/90 border-b border-cyan-500/40 px-4 py-2.5 shadow-[0_4px_20px_rgba(0,210,255,0.2)] flex items-center justify-between gap-3 text-xs z-40 animate-in fade-in slide-in-from-top-2">
+          <div className="flex items-center gap-2.5 text-cyan-300 font-mono">
+            <Monitor className="w-4 h-4 text-cyan-400 shrink-0 animate-pulse" />
+            <span>
+              {lang === 'ar' 
+                ? '🎬 هل ترغب بعرض المشروع بوضع الشاشة الكاملة (Fullscreen) لتجربة سينمائية شاملة؟' 
+                : '🎬 Would you like to view the project in Fullscreen Mode for an immersive cinema experience?'}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={handleToggleFullscreen}
+              className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black font-mono text-[11px] shadow-[0_0_12px_rgba(0,210,255,0.5)] flex items-center gap-1.5 cursor-pointer transition-all hover:scale-105"
+            >
+              <Maximize className="w-3.5 h-3.5" />
+              <span>{lang === 'ar' ? '⚡ شاشة كاملة الآن' : '⚡ Enter Fullscreen'}</span>
+            </button>
+            <button
+              onClick={() => setShowFullscreenPrompt(false)}
+              className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+              title={lang === 'ar' ? 'إغلاق الإشعار' : 'Dismiss'}
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Notification Toast */}
       {toastMessage && (
@@ -161,10 +255,38 @@ export default function App() {
         {currentRoom === 'castle_gate' && (
           <CastleGate
             lang={lang}
-            onEnterApp={() => setCurrentRoom('pitch_deck')}
+            onEnterApp={() => setShowIntro(true)}
             onNavigateRoom={(r) => setCurrentRoom(r)}
             onOpenContract={() => setIsContractOpen(true)}
           />
+        )}
+
+        {currentRoom === 'cinema_tube' && (
+          <CinemaTubeHub lang={lang} />
+        )}
+
+        {currentRoom === 'cinematic_previz' && (
+          <CinematicPrevizSimulator lang={lang} />
+        )}
+
+        {currentRoom === 'talent_bounty' && (
+          <TalentBountyMarketplace lang={lang} />
+        )}
+
+        {currentRoom === 'godfather_sanctum' && (
+          <GodfatherSanctum lang={lang} />
+        )}
+
+        {currentRoom === 'virtual_production' && (
+          <VirtualProductionSuite lang={lang} />
+        )}
+
+        {currentRoom === 'box_office_prophet' && (
+          <BoxOfficeProphetSuite lang={lang} />
+        )}
+
+        {currentRoom === 'autonomous_director' && (
+          <AutonomousDirectorSuite lang={lang} />
         )}
 
         {currentRoom === 'forensic_editor' && (
@@ -187,6 +309,9 @@ export default function App() {
           <CineGuardAudit lang={lang} />
         )}
 
+        {currentRoom === 'elite_arsenal' && (
+          <EliteArsenalStore lang={lang} />
+        )}
         {currentRoom === 'steganography_pro' && (
           <SteganographyStudio
             isArabic={lang === 'ar'}
@@ -201,11 +326,11 @@ export default function App() {
           />
         )}
 
-        {currentRoom === 'crypto_arbitrage' && (
-          <CryptoArbitrageEngine lang={lang} />
+        {(currentRoom === 'short_reels' || currentRoom === 'crypto_arbitrage') && (
+          <ShortReelsStudio lang={lang} />
         )}
 
-                {currentRoom === 'sap_protocol' && (
+        {currentRoom === 'sap_protocol' && (
           <SapProtocolDashboard lang={lang} />
         )}
         {currentRoom === 'shaheen_a1' && (

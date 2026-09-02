@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface CyberFalconLogoProps {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'hero';
@@ -13,6 +13,8 @@ export const CyberFalconLogo: React.FC<CyberFalconLogoProps> = ({
   glow = true,
   className = '',
 }) => {
+  const [imgFailed, setImgFailed] = useState(false);
+
   const sizeMap = {
     xs: 'w-6 h-6',
     sm: 'w-8 h-8',
@@ -24,18 +26,31 @@ export const CyberFalconLogo: React.FC<CyberFalconLogoProps> = ({
 
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
-      {/* Cybernetic Falcon SVG Emblem */}
+      {/* Cybernetic Falcon Emblem */}
       <div className={`relative shrink-0 ${sizeMap[size]}`}>
         {/* Ambient Neon Backlight */}
         {glow && (
-          <div className="absolute inset-0 rounded-full bg-[#00d2ff]/25 blur-md animate-pulse pointer-events-none" />
+          <div className="absolute inset-0 rounded-full bg-[#00d2ff]/30 blur-xl animate-pulse pointer-events-none" />
         )}
 
-        <img
-          src="/shaheen-logo.jpg"
-          alt="Shaheen Apex AI Logo"
-          className="w-full h-full relative z-10 rounded-full object-cover border-2 border-[#00d2ff]/40 shadow-[0_0_15px_rgba(0,210,255,0.3)]"
-        />
+        {!imgFailed ? (
+          <img
+            src="/shaheen-logo.jpg"
+            alt="Shaheen Apex AI Logo"
+            onError={() => setImgFailed(true)}
+            className="w-full h-full relative z-10 rounded-full object-cover border-2 border-[#00d2ff] shadow-[0_0_20px_rgba(0,210,255,0.6)]"
+          />
+        ) : (
+          <div className="w-full h-full relative z-10 rounded-full bg-gradient-to-br from-slate-900 via-cyan-950 to-blue-900 border-2 border-[#00d2ff] shadow-[0_0_25px_rgba(0,210,255,0.8)] flex items-center justify-center p-2">
+            <svg viewBox="0 0 100 100" className="w-full h-full fill-[#00d2ff] drop-shadow-[0_0_8px_#00d2ff]">
+              <path d="M50 10 L62 38 L92 42 L68 62 L76 92 L50 74 L24 92 L32 62 L8 42 L38 38 Z" opacity="0.25" />
+              <path d="M50 15 C55 25 70 30 85 35 C75 45 65 50 60 65 C55 58 52 50 50 42 C48 50 45 58 40 65 C35 50 25 45 15 35 C30 30 45 25 50 15 Z" />
+              <circle cx="44" cy="36" r="2.5" fill="#ffffff" />
+              <circle cx="56" cy="36" r="2.5" fill="#ffffff" />
+              <polygon points="50,42 46,49 54,49" fill="#eab308" />
+            </svg>
+          </div>
+        )}
       </div>
 
       {/* Brand Text when requested */}

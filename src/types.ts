@@ -1,14 +1,23 @@
 export type AppRoom = 
-  | 'castle_gate'       // الصفحة 1: بوابة الدخول والـ 3D Card وشريط الإعلانات المتوهج
-  | 'forensic_editor'   // الصفحة 2: مساعد السيناريو، الفحص الجنائي، وكشف السرقات
-  | 'writers_lobby'     // الصفحة 3: رواق غرف الكتاب (الهواة، المحترفين، والـ VIP) مع تنبيه الفيديو
-  | 'crisis_recovery'   // الصفحة 4: بوابة إنقاذ السيناريوهات والـ AI Reconstructor وخدمة العراب
-  | 'semantic_breakdown'// الصفحة 5: التفكيك الدلالي وحساب التكلفة الإنتاجية الفورية
-  | 'cineguard_audit'   // الصفحة الخاصة بتدقيق السيناريو (CineGuard)
-  | 'steganography_pro' // محرك البصمة الصفرية S-WCM واستخراج هوية المسرب الجنائي
-  | 'pitch_deck'        // عرض المسابقة وهوليوود و Y Combinator
-  | 'crypto_arbitrage'  // منظومة شاهين كريبتو الذكية
-  | 'sap_protocol' | 'shaheen_a1';     // منظومة S.A.P لحماية الأفراد والأمن السيبراني للمستشعرات
+  | 'castle_gate'       // Sovereign Castle Gate Entrance
+  | 'cinema_tube'       // Shaheen CinemaTube Open Video Stage
+  | 'short_reels'       // TikTok-Style Short Reels Video Feed (Max 2 Minutes)
+  | 'talent_bounty'     // Talent Bounty Marketplace & Fast Micro-Jobs
+  | 'godfather_sanctum' // The Godfather's Sanctum & Council of Titans
+  | 'cinematic_previz'  // Cinematic Pre-Viz 3-Cut Simulator & Dispute Resolution
+  | 'virtual_production'// Virtual Production Operations Room (3-in-1)
+  | 'box_office_prophet'// Box Office Prophet Radar & Dramatic Pre-Shielding
+  | 'autonomous_director' // Autonomous Director Suite & Negotiation Swarm
+  | 'forensic_editor'   // Forensic Screenplay Editor & Plagiarism Engine
+  | 'writers_lobby'     // Writers Lobby with Tiered Corridors
+  | 'crisis_recovery'   // Crisis Plot Salvage & AI Reconstructor
+  | 'semantic_breakdown'// Semantic Script Breakdown & Real-Time Production Costing
+  | 'cineguard_audit'   // CineGuard Security & Script Audit
+  | 'steganography_pro' // S-WCM Zero-Width Cryptographic Matrix
+  | 'pitch_deck'        // Global Hollywood & XPRIZE Pitch Deck
+  | 'elite_arsenal'     // Elite Arsenal Store
+  | 'crypto_arbitrage'  // Backwards compatibility alias
+  | 'sap_protocol' | 'shaheen_a1';     // S.A.P Protocol & Shaheen A1 Hardware
 
 export type AppLanguage = 'ar' | 'en' | 'fr';
 

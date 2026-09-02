@@ -252,6 +252,19 @@ export const FounderContractModal: React.FC<FounderContractModalProps> = ({
                     يُصرف للمؤسس <strong>بونص إضافي قدره 1%</strong> إذا تجاوزت أرباح الشركة سقف الـ <strong>100 مليون دولار</strong>، وذلك علاوةً على نسبة الـ 20% والراتب التنفيذي.
                   </div>
                 </li>
+                <li className="flex items-start gap-3 bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                  <span className="text-emerald-400 font-bold font-mono">3.12</span>
+                  <div>
+                    <strong className="text-emerald-300 block mb-1">الوقف التنموي والمسؤولية الإنسانية (10% Annual Sovereign Social Impact Fund):</strong>
+                    يُلزم العقد اقتطاع نسبة <strong>10% سنوياً من صافي أرباح المشروع الإجمالية</strong> تُخصص كوقف دائم لصالح:
+                    <ul className="list-disc list-inside mt-1.5 space-y-1 text-slate-200 text-xs">
+                      <li><strong>دعم قطاع التعليم وتطوير مناهج السينما الرقمية والذكاء الاصطناعي.</strong></li>
+                      <li><strong>صندوق رعاية واحتضان المواهب الشابة والمبتكرين وصناع السينما الجدد.</strong></li>
+                      <li><strong>برامج التأهيل المهني والتدريب المكثف للمتعطلين عن العمل وتأمين وظائف كريمة لهم.</strong></li>
+                    </ul>
+                    <span className="text-[11px] text-emerald-400 font-mono block mt-1.5 font-bold">تدار هذه النسبة بإشراف مباشر من المؤسس المهندس أيمن العَرَّاب تحت شعار: "Humanity Before Capital — الإنسانية قبل رأس المال".</span>
+                  </div>
+                </li>
               </ul>
 ) : (
 
@@ -332,6 +345,19 @@ export const FounderContractModal: React.FC<FounderContractModalProps> = ({
                   <div>
                     <strong className="text-white block mb-1">Super-Profit Bonus:</strong>
                     An additional <strong>1% bonus</strong> is paid to the Founder if the company's profits exceed the <strong>$100 Million threshold</strong>, on top of the 20% equity and CEO salary.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 bg-emerald-950/40 p-3.5 rounded-xl border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                  <span className="text-emerald-400 font-bold font-mono">3.12</span>
+                  <div>
+                    <strong className="text-emerald-300 block mb-1">Sovereign Social Impact & Talent Fund (10% Annual Deduction):</strong>
+                    A mandatory <strong>10% annual deduction from gross project net profits</strong> is strictly allocated to:
+                    <ul className="list-disc list-inside mt-1.5 space-y-1 text-slate-200 text-xs">
+                      <li><strong>Educational infrastructure & digital cinema AI research.</strong></li>
+                      <li><strong>Talent incubation fund for visionary emerging creators & screenwriters.</strong></li>
+                      <li><strong>Vocational empowerment & skills re-training for the unemployed.</strong></li>
+                    </ul>
+                    <span className="text-[11px] text-emerald-400 font-mono block mt-1.5 font-bold">Managed directly by Founder Eng. Ayman Al-Araishi under the core mission: "Humanity Before Capital".</span>
                   </div>
                 </li>
               </ul>

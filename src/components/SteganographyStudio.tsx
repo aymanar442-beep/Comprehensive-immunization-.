@@ -16,15 +16,27 @@ export const SteganographyStudio: React.FC<SteganographyStudioProps> = ({ isArab
   const [scriptTitle, setScriptTitle] = useState('THE DAMASCUS MATRIX (Project Sovereign)');
   const [clearanceLevel, setClearanceLevel] = useState<ClearanceLevel>('Top Secret (Cast Lead)');
 
-  const [rawScript, setRawScript] = useState<string>(
-    `المشهد الأخير - خارجي. جبل قاسيون - فجر
+  const rawScriptAr = `المشهد الأخير - خارجي. جبل قاسيون - فجر
 
 تقف الطائرات المسيّرة صامتة في السماء بينما ينظر القائد إلى أضواء دمشق الساحرة.
 
 البطل
 (ينظر إلى شريحة البيانات في يده)
-لقد انتهت اللعبة يا روجرز... شاهين يرى كل شيء.`
-  );
+لقد انتهت اللعبة يا روجرز... شاهين يرى كل شيء.`;
+
+  const rawScriptEn = `FINAL SCENE - EXT. MOUNT QASIUN - DAWN
+
+Autonomous reconnaissance drones hover in silent formation above the ancient Damascus skyline.
+
+PROTAGONIST
+(inspects the sovereign quantum data-chip in his hand)
+The game is over, Rogers... Shaheen sees everything.`;
+
+  const [rawScript, setRawScript] = useState<string>(isArabic ? rawScriptAr : rawScriptEn);
+
+  React.useEffect(() => {
+    setRawScript(isArabic ? rawScriptAr : rawScriptEn);
+  }, [isArabic]);
 
   const [watermarkedScript, setWatermarkedScript] = useState<string>('');
   const [investigationText, setInvestigationText] = useState<string>('');

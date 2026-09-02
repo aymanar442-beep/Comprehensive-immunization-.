@@ -46,24 +46,25 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
     {
       num: 2,
       tag: 'THE PHOENIX PROTOCOL • HUMANITY BEFORE CAPITAL',
-      titleEn: 'Founder Genesis: Ayman Al-Araishi (The Godfather) — Rising from the Ashes',
-      titleAr: 'عقيدة الفينيق: أيمن العرايشي (العرّاب) — نهوض من تحت الركام لإنقاذ الأرواح',
-      quoteEn: 'Beaten, kidnapped, displaced, and starved. From extreme poverty and complete asset seizure, The Godfather taught himself on a 4-inch smartphone. Like the legendary Phoenix, he rose from the ashes to build an empire of safety, holding 6 revolutionary patents for autonomous medical rescue and global peace.',
-      quoteAr: 'من الخطف، الضرب، التشرد، الفقر والجوع... إلى التعلم الذاتي على شاشة هاتف 4 بوصة. نهض المهندس أيمن (العرّاب) كطائر الفينيق الأسطوري من تحت الركام، ليصنع 6 براءات اختراع لمنظومة شاهين التي تنقذ الأرواح وتستدعي الإسعاف ذاتياً قبل طلب النجدة. الإنسانية قبل رأس المال.',
+      titleEn: 'The Sovereign Creed: In Shaheen, Science & Humanity Unite Under One Sky',
+      titleAr: 'في شاهينْ: تسخير العلم لنشر السلام والأمان وحماية كل من يسكن تحت السماء',
+      quoteEn: 'In Shaheen, we do not sell products nor invent ordinary apps. We only compete with ourselves to innovate what protects human safety and the environment. We strive to harness science to spread peace and safety… From Damascus, the capital of history, from the womb of suffering, and from the resilience of its people in steadfastness, from the Phoenix which, whenever they think it has died, rises anew from its ashes.',
+      quoteAr: '«فِي شَاهِينْ...\nنَحْنُ لا نَبِيعُ مُنْتَجَاتْ ولا نَخْتَرِعُ تَطْبيقَاتْ عادِيّهْ، وَلا نُنَافِسُ إلّا أَنْفُسَنَا لِتَطْويرِ كُلُّ ما يُحَافِظْ على سَلَامَةِ الْإِنْسَانِ وَالْبِيْئَهْ، نَحْنُ نَسْعَى لِتَسْخِيرِ الْعِلْمِ لِنَشْرِ السّلامِ وَالْأمانْ… \nمِنْ دِمَشْقَ عَاصِمَةِ التَّارِيْخْ، مِنْ رَحِمِ الْمَعَاناةْ، وَمِنْ صَلَابَةِ شَعْبِهَا بِالصُّمُودْ، مِنْ طَائِرِ الْفِيْنِيْقْ، الَّذِيْ إِذَا ظّنُّوْ أَنَّهُ مَاتْ .إِنْبَعَثَ مِنْ رَمَادِهِ مِنْ جَدِيْدْ»',
       bulletsEn: [
-        '6 Proprietary Patents for autonomous medical pre-diagnostics and zero-button emergency response.',
-        'SHAHEEN A1 Hardware: A sovereign ecosystem built to save lives globally, not just protect Hollywood assets.',
-        'Google Certified Software Engineer & OSI Member #91-2037395, forged in extreme adversity.',
+        'Proprietary sovereign innovations developed to safeguard human life and global ecology.',
+        'Rising from the ashes: Born in the capital of history (Damascus) with unyielding resilience.',
+        'Universal Humanity: Uniting the world through science without discrimination of race, identity, or creed.',
       ],
       bulletsAr: [
-        '6 براءات اختراع لمنظومة قادرة على كشف الحالات المرضية واستدعاء الإسعاف والتشخيص الأولي دون كبسة زر.',
-        'منظومة شاهين A1 ليست ساعة للبيع، بل كيان أمان متكامل لحماية الإنسان ونشر السلام حول العالم.',
-        'مهندس معتمد من Google، ومؤسس في Y Combinator... صقلته المعاناة ليحمي الكوكب بأسره.',
+        'نَحْنُ لا نَبِيعُ مُنْتَجَاتْ ولا نَخْتَرِعُ تَطْبيقَاتْ عادِيّهْ، وَلا نُنَافِسُ إلّا أَنْفُسَنَا لِتَطْويرِ سَلَامَةِ الْإِنْسَانِ وَالْبِيْئَهْ.',
+        'نَحْنُ نَسْعَى لِتَسْخِيرِ الْعِلْمِ لِنَشْرِ السّلامِ وَالْأمانْ… مِنْ دِمَشْقَ عَاصِمَةِ التَّارِيْخْ، مِنْ رَحِمِ الْمَعَاناةْ، وَمِنْ صَلَابَةِ شَعْبِهَا بِالصُّمُودْ.',
+        'مِنْ طَائِرِ الْفِيْنِيْقْ، الَّذِيْ إِذَا ظّنُّوْ أَنَّهُ مَاتْ .إِنْبَعَثَ مِنْ رَمَادِهِ مِنْ جَدِيْدْ.',
       ],
-      metricVal: '6',
-      metricLabelEn: 'Core Humanitarian Patents',
-      metricLabelAr: 'براءات اختراع لإنقاذ البشرية',
-      godfatherScriptAr: "«سَيِّدَاتِي، سَادَتِي...\nأَنَا لَمْ أَبْنِ شَاهِينْ لِحِمَايَةِ أَمْوَالِ هُولِيوُودَ فَحَسْبْ... لَقَدْ بَنَيْتُهَا لِأَنَّنِي ذُقْتُ طَعْمَ الْخَوْفِ وَالْمَوْتِ وَالتَّشَرُّدِ وَالْجُوعْ.\nشَاهِينْ هِيَ طَائِرُ الْفِينِيقِ الْأُسْطُورِيّ... الَّذِي مَاتَ ثُمَّ انْبَعَثَ مِنَ الرَّمَادِ لِيُنْقِذَ الْأَرْوَاحْ.\nهَذِهِ الْمَنْظُومَةُ تَمْتَلِكُ 6 بَرَاءَاتِ اخْتِرَاعٍ، قَادِرَةٌ عَلَى قِرَاءَةِ أَلَمِ الْمَرِيضِ قَبْلَ أَنْ يَتَأَلَّمْ، وَاسْتِدْعَاءِ الْإِسْعَافِ دُونَ أَنْ يَضْغَطَ زِرّاً، وَمَعْرِفَةِ حَالَتِهِ حَتَّى وَإِنْ غَابَتْ الشَّبَكَه.\nنَحْنُ لَا نَبِيعُ سَاعَاتْ... نَحْنُ نَبْنِي مَنْظُومَةَ أَمَانٍ لِحِمَايَةِ الإِنْسَانِ فِي كُلِّ مَكَانْ.\nالْإِنْسَانُ قَبْلَ الْمَالِ... وَمَنْ يَسْكُنُ تَحْتَ السَّمَاءِ، وَجَبَتْ عَلَيْنَا حِمَايَتُهْ!»",
+      metricVal: 'UNIFIED',
+      metricLabelEn: 'Humanity Above Capital',
+      metricLabelAr: 'الإنسانية قبل كل شيء',
+      godfatherScriptAr: "«فِي شَاهِينْ...\nنَحْنُ لا نَبِيعُ مُنْتَجَاتْ ولا نَخْتَرِعُ تَطْبيقَاتْ عادِيّهْ، وَلا نُنَافِسُ إلّا أَنْفُسَنَا لِتَطْويرِ كُلُّ ما يُحَافِظْ على سَلَامَةِ الْإِنْسَانِ وَالْبِيْئَهْ، نَحْنُ نَسْعَى لِتَسْخِيرِ الْعِلْمِ لِنَشْرِ السّلامِ وَالْأمانْ… \nمِنْ دِمَشْقَ عَاصِمَةِ التَّارِيْخْ، مِنْ رَحِمِ الْمَعَاناةْ، وَمِنْ صَلَابَةِ شَعْبِهَا بِالصُّمُودْ، مِنْ طَائِرِ الْفِيْنِيْقْ، الَّذِيْ إِذَا ظّنُّوْ أَنَّهُ مَاتْ .إِنْبَعَثَ مِنْ رَمَادِهِ مِنْ جَدِيْدْ»",
+      godfatherScriptEn: "In SHAHEEN...\nWe do not sell products nor invent ordinary apps. We only compete with ourselves to innovate whatever preserves the safety of humanity and the environment. We strive to harness science to spread peace and safety…\nFrom Damascus, the capital of history, from the womb of suffering, and from the resilience of its people in steadfastness, from the Phoenix which, whenever they think it has died, rises anew from its ashes.",
     },
     {
       num: 3,
@@ -205,14 +206,16 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
       quoteEn: 'Targeting Tier-1 Hollywood and global streaming giants (Disney, Universal, Netflix, Warner Bros).',
       quoteAr: 'استهداف استوديوهات هوليوود ومنصات البث العالمية (ديزني، يونيفرسال، نتفليكس، وارنر بروس).',
       bulletsEn: [
-        'Tier 1: $250,000 per major feature film deployment (unlimited S-WCM tracking).',
-        'Tier 2: $1.2M annual enterprise license for studio production suites.',
-        'Godfather Crisis Retainer: $500,000 emergency script salvage & counter-twist deployment.',
+        'Strategic Seed Funding: Scaling global cloud infrastructure to secure Tier-1 Hollywood studios.',
+        'Tier 1 Revenue: $250,000 per major feature film deployment (unlimited S-WCM tracking).',
+        'Tier 2 Revenue: $1.2M annual enterprise license for comprehensive studio production suites.',
+        'Godfather Crisis Retainer: $500,000 premium emergency script salvage & counter-twist deployment.',
       ],
       bulletsAr: [
-        'الفئة 1: 250,000 دولار للفيلم الضخم الواحد (تتبع غير محدود بالبصمة الصفرية).',
-        'الفئة 2: ترخيص سنوي شامل بـ 1.2 مليون دولار للاستوديوهات الكبرى.',
-        'عقد طوارئ العرّاب: 500,000 دولار لإنقاذ السيناريوهات المسربة وإعادة هيكلتها.',
+        'التمويل الأولي الاستراتيجي: لتوسيع البنية التحتية السحابية وتأمين كبرى استوديوهات هوليوود.',
+        'إيرادات الفئة 1: 250,000 دولار للفيلم الضخم الواحد (تتبع غير محدود بالبصمة الصفرية).',
+        'إيرادات الفئة 2: ترخيص سنوي شامل بـ 1.2 مليون دولار للاستوديوهات الكبرى.',
+        'عقد طوارئ العرّاب: 500,000 دولار لتدخل طارئ لإنقاذ السيناريوهات المسربة.',
       ],
       metricVal: '$250K',
       metricLabelEn: 'Per-Blockbuster License Base',
@@ -222,10 +225,10 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
     {
       num: 10,
       tag: 'XPRIZE & GLOBAL MILESTONE',
-      titleEn: 'XPRIZE Build with Gemini Official Candidate & Top 100 Standing',
-      titleAr: 'مسابقة XPRIZE العالمية والترشح لقائمة أفضل 100 مشروع عالمي',
-      quoteEn: 'Official submission recognized by XPRIZE and Google Developer ecosystem, establishing Shaheen as the next-generation sovereign standard.',
-      quoteAr: 'مشروع رسمي معتمد وموثق في مسابقة XPRIZE وبناء بيئة مطوري Google، مكرساً منظومة شاهين كمعيار عالمي جديد.',
+      titleEn: 'XPRIZE Build with Gemini Official Candidate & Top Global Contender',
+      titleAr: 'مسابقة XPRIZE العالمية والترشح الأقوى للفوز بين أفضل المشاريع عالمياً',
+      quoteEn: 'Official submission recognized by XPRIZE and Google Developer ecosystem, establishing Shaheen as a top contender for the global prize.',
+      quoteAr: 'مشروع رسمي معتمد وموثق في مسابقة XPRIZE وبناء بيئة مطوري Google، مكرساً منظومة شاهين كالمرشح الأقوى للمنافسة عالمياً.',
       bulletsEn: [
         'Official confirmation email received from XPRIZE Competition Team.',
         'Over 10+ Google Developer Badges including Gemini Enterprise Agent Ready.',
@@ -234,12 +237,23 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
       bulletsAr: [
         'استلام رسالة التقدير والتوثيق الرسمية من فريق مسابقة XPRIZE العالمية.',
         'أكثر من 10 شارات معتمدة من Google للمطورين بما فيها جاهزية وكلاء Gemini Enterprise.',
-        'تفاعل قيادي مع مجتمع المطورين والمهندسين حول العالم.',
+        'الترشح الأقوى للتتويج في المراتب الأولى للمسابقة العالمية.',
       ],
-      metricVal: 'TOP 100',
+      metricVal: 'TOP CONTENDER',
       metricLabelEn: 'XPRIZE Gemini Competition Standing',
-      metricLabelAr: 'تصنيف المنافسة في مسابقة XPRIZE',
-      godfatherScriptAr: "مِنْ دِمَشْقَ إِلَى هُولِيوُودْ... ٱلرِّسَالَةُ وَاحِدَه.\nٱلْفَنُّ هُوَ ٱلْإِرْثُ ٱلْحَقِيقِيُّ لِلْبَشَرِيَّه. وَنَحْنُ فِي شَاهِينْ أَبِكْسْ أَقْسَمْنَا أَنْ نَّصُونَ هَذَا ٱلْإِرْثْ، كَمَا أَقْسَمْنَا عَلَى نَشْرِ الْأَمْنَ وَالْأَمَانِ حَوْلَ الْعِالِمِ بِكُلِّ الْإِمْكَانِيَّاتِ الَّتِي تَسْعَى شَاهِيْنْ لِتَوْفِيْرَهَا مِنْ خِلَالِ التِّكْنُلُوجْيَا تَحْتَ أَيِّ سَمَاءْ وَفَوْقَ كُلِّ أَرْضْ كَ كَيَانِنْ دَاعِيْ لِلسَّلَامْ والْأَمْنَ والْإِسْتِقْرَارِ حَوْلَ الُعَالَمْ مِنْ دُوْنِ النَّظَرَ لِلْهَويَّة أَوْ مَنْ تَكُونْ.\nوَإِنَّمَا النَّظَرُ إِلَيْكَ كَإِنْسَانْ\nإِنْضَمُّوْ إِلَى ثَوْرَتَنَا ٱلرَّقَمِيَّهْ... لِنَكْتُبَ مَعَنْ تَارِيخَنْ جَدِيدَنْ لَا يُمْكِنُ مَحْوُهْ.\nشَاهِينْ أَبِكْسْ... ٱلْحَارِسُ ٱلْأَبَدِيُّ لِلْفَنِّ ٱلسَّابِعْ.",
+      metricLabelAr: 'المرشح الأقوى لجائزة XPRIZE',
+      godfatherScriptAr: `«فِي شَاهِينْ...
+نَحْنُ لا نَبِيعُ مُنْتَجَاتْ ولا نَخْتَرِعُ تَطْبيقَاتْ عادِيّهْ، وَلا نُنَافِسُ إلّا أَنْفُسَنَا لِتَطْويرِ كُلَّ ما يُحَافِظْ على سَلَامَةِ الْإِنْسَانِ وَالْبِيْئَهْ، نَحْنُ نَسْعَى لِتَسْخِيرِ الْعِلْمِ لِنَشْرِ السّلامِ وَالْأمانْ… 
+مِنْ دِمَشْقَ عَاصِمَةِ التَّارِيْخْ، مِنْ رَحِمِ الْمَعَاناةْ، وَمِنْ صَلَابَةِ شَعْبِهَا بِالصُّمُودْ، مِنْ طَائِرِ الْفِيْنِيْقْ، الَّذِيْ إِذَا ظّنُّوْ أَنَّهُ مَاتْ .إِنْبَعَثَ مِنْ رَمَادِهِ مِنْ جَدِيْدْ
+رِسَالَتَنَا الْعَمَلَ على تَوْحِيْدِ الْعَالَمِ بِالْعِلْمْ وَحِمَايَةَ كُلَّ مَنْ يَسْكُنُ تَحَتَ السَّمَاءْ، دُونُ التَّفرِقَهْ بَيْنَ أَحَدْ، لا بِالْهَويَّهْ ولا الْإِنْتِمَاءْ ولا الْعِرْقِ وِالدِّيْنْ.
+فَكُلُّنَا سَوَاسِيَهْ وَالْإِنْسَانِيَّهْ هِيَ هُوِيَّتَنَا جَمِيْعَنْ.
+مِنَ الْعَرَّابْ: ضَعُوْ أَيْدِيْكْمْ مَعَ أَيْدِيْنَا، لِبِنَاءِ الْمُسْتَقْبَلِ مَعَنْ!»`,
+      godfatherScriptEn: `In SHAHEEN...
+We do not sell mere products nor invent ordinary apps. We compete only with ourselves to pioneer everything that safeguards humanity and the environment. We strive to harness science for universal peace and security…
+From Damascus, the capital of history, from the womb of suffering and the resolute resilience of its people—like the mythical Phoenix that, when thought dead, rises anew from its ashes.
+Our mission is to unite the world through science and protect everyone dwelling beneath the heavens without distinction of identity, allegiance, race, or religion.
+For we are all equals, and humanity is our common identity.
+From The Godfather: Place your hands in ours, to build the future together!`,
     },
     {
       num: 11,
@@ -261,6 +275,8 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
       metricVal: '10/10',
       metricLabelEn: 'Performance & Innovation Rating',
       metricLabelAr: 'تقييم الأداء والابتكار التقني',
+      godfatherScriptAr: "فِي شَاهِينْ أَبِكْسْ... نَحْنُ لَا نَعْتَمِدُ عَلَى مُجَرَّدِ حَمَايَةٍ تَقْلِيدِيَّة. نَحْنُ نَصْنَعُ بَصْمَةً مَائِيَّةً صِفْرِيَّةً تَتَخَلَّلُ كُلَّ حَرْفٍ وَسَطْرٍ دُونَ أَنْ تَرَاهَا الْعَيْنُ أَوْ تَكْتَشِفَهَا الْكَامِيرَاتْ.\nحَتَّى لَوْ تَمَّ تَسْرِيبُ النَّصِّ أَوْ تَصْوِيرُهُ بِالْهَاتِفْ... خِلَالَ أَرْبَعِينَ مِلِّي ثَانِيَة نَسْتَخْرِجُ اسْمَ الْمُسَرِّبِ، تَارِيخَ الْجَرِيمَةِ، وَتَوْقِيعَهُ الْجِنَائِيَّ لِلْمَحَاكِمِ الدَّوْلِيَّة.",
+      godfatherScriptEn: "In SHAHEEN APEX AI... we do not rely on fragile legacy protection. We embed a zero-width cryptographic matrix into every word and line, completely invisible to the naked eye or OCR.\nEven if a script is snapped on a phone or leaked on set... in 40 milliseconds we extract the leaker identity, time of leak, and forensic proof for international courts.",
     },
     {
       num: 12,
@@ -282,6 +298,8 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
       metricVal: 'PHASE 4',
       metricLabelEn: 'The Ultimate Entity Vision',
       metricLabelAr: 'رؤية الكيان المطلقة',
+      godfatherScriptAr: "نَحْنُ لَسْنَا مُجَرَّدَ بَرْنَامَجٍ أَوْ تَطْبِيقْ... نَحْنُ كِيَانٌ سِيَادِيٌّ يَجْمَعُ عُظَمَاءَ هُولِيوُود، بُولِيوُود، وَالسِّينِمَا الْعَرَبِيَّةِ تَحْتَ سَقْفٍ وَاحِدْ.\nرُؤْيَتُنَا هِيَ تَأْسِيسُ جَوَائِزِ شَاهِينْ الدَّوْلِيَّةِ لِرِعَايَةِ الْفَنِّ وَحِمَايَةِ كُلِّ مُبْدِعٍ وَكَاتِبٍ فِي الْعَالَم.\nالإِنْسَانِيَّةُ قَبْلَ كُلِّ شَيْء... وَالْعِلْمُ هُوَ رَسُولُ السَّلَام.",
+      godfatherScriptEn: "We are not merely software or an ordinary app... we are a sovereign global entity bringing together the legends of Hollywood, Bollywood, and Arab cinema under one roof.\nOur vision is to establish the annual Global Shaheen Awards to sponsor art and safeguard every creator and writer worldwide.\nHumanity above all... and science is the sovereign messenger of peace.",
     },
   ];
 
@@ -297,13 +315,45 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
       return;
     }
 
-    // Force Arabic audio for Slide 2 (Founder Story) even if UI is in English
+    // If on hero slides (Slide 2, Slide 10, Slide 12) or if dual-speech is enabled, speak both Arabic and English seamlessly
+    const isFinalOrHeroSlide = currentSlideData.num === 2 || currentSlideData.num === 10 || currentSlideData.num === 12;
+
+    if (isFinalOrHeroSlide) {
+      const arText = currentSlideData.godfatherScriptAr || `${currentSlideData.titleAr}. ${currentSlideData.quoteAr}. ${currentSlideData.bulletsAr.join('. ')}`;
+      const enText = currentSlideData.godfatherScriptEn || `${currentSlideData.titleEn}. ${currentSlideData.quoteEn}. ${currentSlideData.bulletsEn.join('. ')}`;
+
+      const utteranceAr = new SpeechSynthesisUtterance(arText);
+      utteranceAr.lang = 'ar-SA';
+      utteranceAr.rate = 0.95;
+      utteranceAr.pitch = 0.9;
+
+      const utteranceEn = new SpeechSynthesisUtterance(enText);
+      utteranceEn.lang = 'en-US';
+      utteranceEn.rate = 0.95;
+      utteranceEn.pitch = 0.9;
+
+      utteranceAr.onend = () => {
+        // Automatically start the English message immediately after Arabic finishes
+        window.speechSynthesis.speak(utteranceEn);
+      };
+
+      utteranceEn.onend = () => setIsNarrating(false);
+      utteranceAr.onerror = () => setIsNarrating(false);
+      utteranceEn.onerror = () => setIsNarrating(false);
+
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utteranceAr);
+      setIsNarrating(true);
+      return;
+    }
+
+    // Default narration for other slides according to selected language or slide rules
     const forceArabicAudio = currentSlideData.num === 2;
     const speakArabic = isArabic || forceArabicAudio;
 
     const textToSpeak = speakArabic
       ? (currentSlideData.godfatherScriptAr || `${currentSlideData.titleAr}. ${currentSlideData.quoteAr}. ${currentSlideData.bulletsAr.join('. ')}`)
-      : `${currentSlideData.titleEn}. ${currentSlideData.quoteEn}. ${currentSlideData.bulletsEn.join('. ')}`;
+      : (currentSlideData.godfatherScriptEn || `${currentSlideData.titleEn}. ${currentSlideData.quoteEn}. ${currentSlideData.bulletsEn.join('. ')}`);
 
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.lang = speakArabic ? 'ar-SA' : 'en-US';
@@ -443,14 +493,21 @@ export const PitchDeckShowcase: React.FC<PitchDeckProps> = ({ isArabic, onOpenCo
               {isArabic ? currentSlideData.titleAr : currentSlideData.titleEn}
             </h3>
 
-            {isArabic && currentSlideData.godfatherScriptAr ? (
-              <div className="p-5 sm:p-7 rounded-2xl bg-slate-950/80 border-2 border-[#00d2ff]/40 shadow-[0_0_25px_rgba(0,210,255,0.1)] relative">
+            {currentSlideData.godfatherScriptAr ? (
+              <div className="p-5 sm:p-7 rounded-2xl bg-slate-950/80 border-2 border-[#00d2ff]/40 shadow-[0_0_25px_rgba(0,210,255,0.1)] relative space-y-3">
                 <div className="absolute top-0 right-6 -translate-y-1/2 px-3 py-1 bg-blue-950 border border-[#00d2ff]/50 rounded-full text-[10px] text-[#00d2ff] font-bold font-mono tracking-widest backdrop-blur-sm shadow-[0_0_10px_rgba(0,210,255,0.4)]">
-                  السيناريو السيادي (The Sovereign Script)
+                  {isArabic ? 'السيناريو السيادي (The Sovereign Script)' : 'THE SOVEREIGN SCRIPT • DUAL AUDIO'}
                 </div>
-                <p className="text-white text-sm sm:text-lg leading-[1.8] whitespace-pre-wrap font-sans font-medium">
-                  {currentSlideData.godfatherScriptAr}
+                <p className="text-white text-sm sm:text-base leading-[1.8] whitespace-pre-wrap font-sans font-medium">
+                  {isArabic ? currentSlideData.godfatherScriptAr : (currentSlideData.godfatherScriptEn || currentSlideData.godfatherScriptAr)}
                 </p>
+                {/* Secondary bilingual translation if on final slide or requested */}
+                {!isArabic && currentSlideData.godfatherScriptAr && currentSlideData.godfatherScriptEn && (
+                  <div className="pt-3 border-t border-slate-800/80 text-xs text-cyan-200/80 leading-relaxed font-sans italic">
+                    <span className="font-mono text-[10px] text-cyan-400 block mb-1 font-bold">ARABIC ORIGINAL SCRIPT:</span>
+                    {currentSlideData.godfatherScriptAr}
+                  </div>
+                )}
               </div>
             ) : (
               <div className="p-4 sm:p-5 rounded-2xl bg-[#020617]/80 border border-slate-800/80 shadow-inner relative">

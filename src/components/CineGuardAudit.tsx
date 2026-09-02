@@ -12,7 +12,7 @@ export const CineGuardAudit: React.FC<CineGuardAuditProps> = ({ lang }) => {
   const [analyzing, setAnalyzing] = useState(false);
   const [reportReady, setReportReady] = useState(false);
 
-  const mockScript = `المشهد 12 - خارجي. جسر الجيزة الجديد - منتصف الليل (أمطار حمضية غزيرة)
+  const mockScriptAr = `المشهد 12 - خارجي. جسر الجيزة الجديد - منتصف الليل (أمطار حمضية غزيرة)
 تنعكس لوحات الإعلانات ثلاثية الأبعاد النيونية على الكروم المبلل لدراجة طارق الإلكترونية. يقوم بتعديل قناعه العصبي.
 طارق
 ليلى، جدار الحماية الخاص بالبنك المركزي ينبض كل 4 مللي ثانية. إذا تجاوزتُ عقدة سفينكس، فستدمر طائراتهم الدفاعية الآلية الممر الجوي.
@@ -22,9 +22,23 @@ export const CineGuardAudit: React.FC<CineGuardAuditProps> = ({ lang }) => {
 طارق (يتسارع نحو السقوط الحر)
 سيُطفأ الظلام خلال ثلاثة، اثنين، واحد!`;
 
-  const [scriptInput, setScriptInput] = useState(mockScript);
+  const mockScriptEn = `SCENE 12 - EXT. NEW GIZA OVERPASS - MIDNIGHT (HEAVY ACID RAIN)
+Holographic neon advertisements refract across the wet chrome chassis of TAREK's cyber-bike. He adjusts his neural respirator.
+TAREK
+Leila, the Central Bank firewall pulses every 4 milliseconds. If I override the Sphinx node, automated defense drones will sever the transit corridor.
+LEILA (via Neuro-Feed)
+Do not touch the Sphinx node! It is a honeypot trap constructed by Blackwater AI.
+A barrage of plasma tracer rounds shreds the overpass barrier above Tarek!
+TAREK (accelerating into freefall)
+Going dark in three, two, one!`;
 
-  const markdownReport = `
+  const [scriptInput, setScriptInput] = useState(lang === 'ar' ? mockScriptAr : mockScriptEn);
+
+  React.useEffect(() => {
+    setScriptInput(lang === 'ar' ? mockScriptAr : mockScriptEn);
+  }, [lang]);
+
+  const markdownReportAr = `
 [CINEGUARD APEX] // تقرير التدقيق التحليلي والتنبؤ الجماهيري
 مشروع: THE NILE PROTOCOL: CYBER HEIST 2099
 مستوى السرية: مصنف / مسودة مشفرة
@@ -87,6 +101,71 @@ export const CineGuardAudit: React.FC<CineGuardAuditProps> = ({ lang }) => {
 ───
 
 **القرار النهائي للنظام:** اعتماد المشهد للتنفيذ مع التركيز على المؤثرات البصرية للـ Tracer Rounds لضمان أقصى عائد احتفاظ بصري.
+`;
+
+  const markdownReportEn = `
+[CINEGUARD APEX] // Script Audit & Audience Retention Forecasting Report
+PROJECT: THE NILE PROTOCOL: CYBER HEIST 2099
+CLASSIFICATION: Sovereign Clearance / Encrypted Draft
+TARGET DISTRIBUTION: Global SVOD Streamers & Global Box Office
+
+───
+
+### 1. Demographic Resonance Analysis
+Target Cohort: Gen-Z & Digital Native Sci-Fi / High-Concept Action Enthusiasts
+
+* **Visual & Narrative Arab-Futurism / Cyberpunk:**
+  * **Resonance Score:** 94%
+  * **Analysis:** Merging cyberpunk tropes with ancient monuments (New Giza overpass, Sphinx cryptographic node) disrupts Western sci-fi monotony, establishing high cultural curiosity and viral potential for Gen-Z audiences.
+* **Gamer-Adjacent Pacing & Neuro-Dialogue:**
+  * Rapid neuro-feed dialogue, tactical latency warnings, and automated drone countermeasures emulate AAA gaming narrative pacing (comparable to Cyberpunk 2077).
+
+───
+
+### 2. Commercial Viability & Bingeability Metrics
+
+| Metric | Score | Analytical Verdict |
+| :--- | :--- | :--- |
+| **Commercial Viability** | 87% | High global export value combining cyber warfare and high-velocity chase beats. |
+| **Bingeability Index** | 92/100 | Scene concludes on a sharp micro-cliffhanger securing seamless episodic transition. |
+| **Box Office & IMAX Factor** | 82% | Chiaroscuro lighting, acid rain reflections, and plasma tracer rounds maximize premium format value. |
+
+───
+
+### 3. Viewer Retention Curve & Churn Risk Hotspots
+
+\`\`\`text
+[SCENE 12 RETENTION VECTOR]
+100% | /--- (Plasma Barrage & Freefall Adrenaline Peak)
+ 80% | /--- (Sphinx Node Identification) /
+ 60% | /                  /
+ 40% |_/ (Technical Firewall Exposition) -------
+  0% +-------------------------------------------------> Time (seconds)
+\`\`\`
+
+* **Retention Hotspot:**
+  * **Beat:** "A barrage of plasma tracer rounds... TAREK accelerating into freefall"
+  * **Impact:** Immediate spike in audience dopamine response; drop-off rate minimized to < 1.2%.
+* **Potential Churn Risk:**
+  * **Beat:** Initial technical exposition (4 milliseconds, Blackwater honeypot).
+  * **Directive:** Limit exposition dialogue to 4–6 seconds before the action beats hit to retain short-attention-span viewers.
+
+───
+
+### 4. Viral Marketing Hooks & Trailer Beats
+
+**A. Teaser Trailer Climax:**
+1. **Audio Drop:** Sudden audio blackout on: "Going dark in three, two, one!"
+2. **Visual Beat:** Anamorphic freeze-frame as the cyber-bike plunges between acid-drenched skyscrapers with tracer fire scraping the helmet.
+3. **Sub-Bass Drop:** Deep 808 cinematic boom as the sovereign title card emerges.
+
+**B. Social Media Campaign Hooks:**
+* **TikTok / Reels Hook:** "Retro-tech infrastructure vs. 2099 Super-AI" meme vector.
+* **AR Filter Activation:** "Tarek's Neuro-HUD" facial tracking overlay for interactive promotion.
+
+───
+
+**Final System Recommendation:** GREENLIT for production. Prioritize photorealistic VFX on tracer rounds to guarantee maximum audience retention.
 `;
 
   const handleAudit = () => {
@@ -175,7 +254,7 @@ export const CineGuardAudit: React.FC<CineGuardAuditProps> = ({ lang }) => {
                 prose-strong:text-emerald-400
                 prose-table:border prose-table:border-slate-800 prose-th:bg-slate-900 prose-th:p-2 prose-td:p-2 prose-td:border-t prose-td:border-slate-800
                 prose-pre:bg-[#020617] prose-pre:border prose-pre:border-slate-800 prose-pre:text-xs">
-                <Markdown>{markdownReport}</Markdown>
+                <Markdown>{lang === 'ar' ? markdownReportAr : markdownReportEn}</Markdown>
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center h-64 text-slate-500 space-y-3">

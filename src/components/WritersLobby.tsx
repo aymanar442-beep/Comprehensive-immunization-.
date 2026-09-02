@@ -10,6 +10,12 @@ interface WritersLobbyProps {
 export const WritersLobby: React.FC<WritersLobbyProps> = ({ lang }) => {
   const [showSecurityAlert, setShowSecurityAlert] = useState<boolean>(false);
   const [videoPlaying, setVideoPlaying] = useState<boolean>(false);
+  const [notification, setNotification] = useState<string | null>(null);
+
+  const showNotice = (msg: string) => {
+    setNotification(msg);
+    setTimeout(() => setNotification(null), 3000);
+  };
 
   const handleSimulateVideoEnd = () => {
     setVideoPlaying(false);
@@ -18,6 +24,13 @@ export const WritersLobby: React.FC<WritersLobbyProps> = ({ lang }) => {
 
   return (
     <div className="space-y-8">
+      {/* Toast Notification */}
+      {notification && (
+        <div className="fixed top-24 right-6 z-50 p-4 rounded-xl bg-slate-900/95 border border-cyan-500/80 text-cyan-300 text-xs font-mono shadow-[0_0_20px_rgba(0,210,255,0.4)] animate-in fade-in slide-in-from-top-2">
+          {notification}
+        </div>
+      )}
+
       {/* Header Description */}
       <div className="bg-[#0f172a] border border-[#1e293b] rounded-2xl p-6 shadow-xl text-center space-y-2 relative">
         <div className="flex justify-center mb-1">
@@ -53,7 +66,7 @@ export const WritersLobby: React.FC<WritersLobbyProps> = ({ lang }) => {
           </div>
 
           <button
-            onClick={() => alert(lang === 'ar' ? 'تم الدخول إلى غرفة الهواة!' : 'Entered Amateur Creators Lobby')}
+            onClick={() => showNotice(lang === 'ar' ? '✅ تم الدخول إلى رواق الهواة المفتوح!' : '✅ Connected to Open Creators Lobby!')}
             className="w-full py-3 bg-[#0284c7] hover:bg-[#00d2ff] text-white font-extrabold text-xs rounded-xl shadow-[0_0_12px_#0284c7] transition-all cursor-pointer"
           >
             {lang === 'ar' ? 'دخول مجاني (Enter Free)' : 'Enter Free Lobby'}
@@ -78,7 +91,7 @@ export const WritersLobby: React.FC<WritersLobbyProps> = ({ lang }) => {
           </div>
 
           <button
-            onClick={() => alert(lang === 'ar' ? 'يرجى تفعيل الاشتراك السنوي للاستوديوهات!' : 'Subscription required')}
+            onClick={() => showNotice(lang === 'ar' ? '🔒 يرجى تفعيل اشتراك المحترفين للاستوديوهات!' : '🔒 Pro Studio Subscription required to decrypt.')}
             className="w-full py-3 bg-[#1e293b] hover:bg-[#334155] text-slate-200 border border-[#475569] font-extrabold text-xs rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2"
           >
             <Lock className="w-3.5 h-3.5" />
@@ -104,7 +117,7 @@ export const WritersLobby: React.FC<WritersLobbyProps> = ({ lang }) => {
           </div>
 
           <button
-            onClick={() => alert(lang === 'ar' ? 'جاري فتح بوابة الدفع الآمنة لخدمة الـ VIP...' : 'Connecting VIP payment gate...')}
+            onClick={() => showNotice(lang === 'ar' ? '👑 جاري تجهيز القناة المشفرة للعرّاب...' : '👑 Initializing sovereign encrypted VIP corridor...')}
             className="w-full py-3 bg-gradient-to-r from-[#ff4500] to-[#ff6b00] text-white font-extrabold text-xs rounded-xl shadow-[0_0_15px_#ff4500] transition-all cursor-pointer flex items-center justify-center gap-2"
           >
             <Star className="w-3.5 h-3.5 fill-white" />

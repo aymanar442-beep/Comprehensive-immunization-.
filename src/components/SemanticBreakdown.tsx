@@ -9,8 +9,18 @@ interface SemanticBreakdownProps {
 
 export const SemanticBreakdown: React.FC<SemanticBreakdownProps> = ({ lang }) => {
   const [sceneInput, setSceneInput] = useState<string>(
-    'مشهد 14: سيارتين بالليل بشارع عام عم يتسابقوا بسرعة جنونية مع انفجار محطة وقود جانبية والكاميرات موزعة على الدرون والمروحية مع مؤثرات إضاءة عالية.'
+    lang === 'ar'
+      ? 'مشهد 14: سيارتين بالليل بشارع عام عم يتسابقوا بسرعة جنونية مع انفجار محطة وقود جانبية والكاميرات موزعة على الدرون والمروحية مع مؤثرات إضاءة عالية.'
+      : 'Scene 14: Night shoot on a public highway with two stunt cars racing at extreme velocity, side gas station explosion, multi-cam aerial coverage on drones and helicopters with intense anamorphic lighting effects.'
   );
+
+  React.useEffect(() => {
+    setSceneInput(
+      lang === 'ar'
+        ? 'مشهد 14: سيارتين بالليل بشارع عام عم يتسابقوا بسرعة جنونية مع انفجار محطة وقود جانبية والكاميرات موزعة على الدرون والمروحية مع مؤثرات إضاءة عالية.'
+        : 'Scene 14: Night shoot on a public highway with two stunt cars racing at extreme velocity, side gas station explosion, multi-cam aerial coverage on drones and helicopters with intense anamorphic lighting effects.'
+    );
+  }, [lang]);
 
   const [analyzing, setAnalyzing] = useState<boolean>(false);
   const [analysisResult, setAnalysisResult] = useState<ScriptAnalysisResult | null>({

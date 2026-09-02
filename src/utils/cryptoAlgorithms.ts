@@ -194,7 +194,7 @@ export class WealthAlgorithm {
     const riskReport = ProactiveRiskSimulator.executePreTradeSimulation(asset, currentPrice);
 
     if (riskReport.requiresManualOverride) {
-      console.error('[WEALTH_ALGORITHM] HALTED: Trade requires user manual override due to risk.');
+      console.warn('[WEALTH_ALGORITHM] AI Risk Protection active: Trade halted due to dynamic market volatility. User manual override required.');
       return null;
     }
 

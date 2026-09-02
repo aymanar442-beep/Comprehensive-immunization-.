@@ -9,10 +9,21 @@ interface CrisisRecoveryProps {
 
 export const CrisisRecovery: React.FC<CrisisRecoveryProps> = ({ lang }) => {
   const [leakedText, setLeakedText] = useState<string>(
-    'المشهد 92: تم تسريب موت البطل الرئيسي بالسم وانكشاف هوية الخائن في الصحافة قبل موعد العرض بشهرين!'
+    lang === 'ar'
+      ? 'المشهد 92: تم تسريب موت البطل الرئيسي بالسم وانكشاف هوية الخائن في الصحافة قبل موعد العرض بشهرين!'
+      : 'Scene 92: Major climax leaked to press 2 months ahead of premier. Lead protagonist supposedly poisoned and the undercover agent exposed!'
   );
   const [aiGenerating, setAiGenerating] = useState<boolean>(false);
   const [salvageDone, setSalvageDone] = useState<boolean>(false);
+  const [vipRequested, setVipRequested] = useState<boolean>(false);
+
+  React.useEffect(() => {
+    setLeakedText(
+      lang === 'ar'
+        ? 'المشهد 92: تم تسريب موت البطل الرئيسي بالسم وانكشاف هوية الخائن في الصحافة قبل موعد العرض بشهرين!'
+        : 'Scene 92: Major climax leaked to press 2 months ahead of premier. Lead protagonist supposedly poisoned and the undercover agent exposed!'
+    );
+  }, [lang]);
 
   const handleAIRecovery = () => {
     if (!leakedText.trim()) return;
@@ -24,11 +35,8 @@ export const CrisisRecovery: React.FC<CrisisRecoveryProps> = ({ lang }) => {
   };
 
   const handleGodfatherRecovery = () => {
-    alert(
-      lang === 'ar'
-        ? 'جارٍ فتح بوابة الدفع الآمنة سترايب لإنهاء حجز استشارة العرّاب الخاصة وتشفير الملفات بجدول سري...'
-        : 'Connecting secure Stripe gateway for VIP Godfather recovery session...'
-    );
+    setVipRequested(true);
+    setTimeout(() => setVipRequested(false), 4000);
   };
 
   return (
@@ -114,6 +122,13 @@ export const CrisisRecovery: React.FC<CrisisRecoveryProps> = ({ lang }) => {
             <Crown className="w-4 h-4" />
             <span>{lang === 'ar' ? 'طلب خدمة العرّاب الخاصة (VIP)' : 'Retain Godfather VIP Salvage'}</span>
           </button>
+
+          {vipRequested && (
+            <div className="mt-3 p-3 rounded-xl bg-amber-950/80 border border-amber-500/60 text-amber-300 text-xs font-mono text-center animate-pulse flex items-center justify-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
+              <span>{lang === 'ar' ? 'تم حجز الجلسة السرية للعرّاب وتشفير المستندات!' : 'Godfather VIP confidential channel reserved and encrypted!'}</span>
+            </div>
+          )}
         </div>
 
       </div>

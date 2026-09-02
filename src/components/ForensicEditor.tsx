@@ -10,8 +10,7 @@ interface ForensicEditorProps {
 
 export const ForensicEditor: React.FC<ForensicEditorProps> = ({ lang }) => {
   const [writingMode, setWritingMode] = useState<'manual' | 'ai' | 'vip'>('manual');
-  const [scriptText, setScriptText] = useState<string>(
-    `المشهد 44 - داخلي. غرفة التحقيق الفيدرالية - ليل
+  const defaultScriptAr = `المشهد 44 - داخلي. غرفة التحقيق الفيدرالية - ليل
 
 أضواء النيون الباردة تنعكس على الطاولة الحديدية.
 
@@ -23,8 +22,27 @@ export const ForensicEditor: React.FC<ForensicEditorProps> = ({ lang }) => {
 
 شاهين
 (يبتسم بهدوء وينظر للكاميرا)
-لم أخترق شيئاً يا روجرز... أنا فقط استخدمت الفراغات الصفرية بين الكلمات.`
-  );
+لم أخترق شيئاً يا روجرز... أنا فقط استخدمت الفراغات الصفرية بين الكلمات.`;
+
+  const defaultScriptEn = `SCENE 44 - INT. FEDERAL INTERROGATION VAULT - NIGHT
+
+Cold cyan neon refractions gleam across the reinforced steel table.
+
+DETECTIVE ROGERS slams the classified file down before SHAHEEN.
+
+ROGERS
+(visibly enraged)
+How did you bypass Hollywood's master cryptographic core without triggering server telemetry?
+
+SHAHEEN
+(smiles calmly, glancing directly into the surveillance lens)
+I didn't hack anything, Rogers... I simply encoded sovereignty into the zero-width spaces between words.`;
+
+  const [scriptText, setScriptText] = useState<string>(lang === 'ar' ? defaultScriptAr : defaultScriptEn);
+
+  React.useEffect(() => {
+    setScriptText(lang === 'ar' ? defaultScriptAr : defaultScriptEn);
+  }, [lang]);
 
   const [analyzing, setAnalyzing] = useState(false);
   const [plagiarismResult, setPlagiarismResult] = useState<PlagiarismResult | null>(null);
@@ -40,18 +58,22 @@ export const ForensicEditor: React.FC<ForensicEditorProps> = ({ lang }) => {
         isPlagiarized: false,
         tamperIntegrity: scan.tamperIntegrity,
         hiddenWatermarkFound: scan.detected,
-        watermarkOwner: scan.payload?.recipientName || 'Unassigned / Draft Mode',
+        watermarkOwner: scan.payload?.recipientName || (lang === 'ar' ? 'مسودة قيد التطوير' : 'Unassigned / Draft Mode'),
         clicheLines: [
           {
             line: 4,
-            text: 'المحقق روجرز يرمي ملف القضية بغضب شديد',
-            suggestion: 'المحقق روجرز يسحب كرسيه ببطء مدوٍّ، يضع الملف دون أن يرفع عينيه الباردتين، مما يرفع التوتر النفسي 10 أضعاف.',
+            text: lang === 'ar' ? 'المحقق روجرز يرمي ملف القضية بغضب شديد' : 'Detective Rogers slams the classified file down in anger',
+            suggestion: lang === 'ar' 
+              ? 'المحقق روجرز يسحب كرسيه ببطء مدوٍّ، يضع الملف دون أن يرفع عينيه الباردتين، مما يرفع التوتر النفسي 10 أضعاف.'
+              : 'Rogers pulls his chair with deafening stillness, sliding the ledger across the table without raising his cold gaze.',
             locked: !unlockedSuggestions,
           },
           {
             line: 8,
-            text: 'يبتسم بهدوء وينظر للكاميرا',
-            suggestion: 'شاهين يُعدّل نبرة صوته لتطابق تردد أجهزة التنصت، كاشفاً أنه هو من يقود اللعبة.',
+            text: lang === 'ar' ? 'يبتسم بهدوء وينظر للكاميرا' : 'Smiles calmly, glancing directly into camera',
+            suggestion: lang === 'ar'
+              ? 'شاهين يُعدّل نبرة صوته لتطابق تردد أجهزة التنصت، كاشفاً أنه هو من يقود اللعبة.'
+              : 'Shaheen modulates his acoustic resonance to match the surveillance frequencies, revealing complete tactical supremacy.',
             locked: !unlockedSuggestions,
           },
         ],
